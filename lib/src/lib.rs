@@ -34,4 +34,3 @@ impl StorageSlotProof {
 pub fn get_slot(mapping_key: &B256, mapping_slot: &B256) -> B256 {
     keccak256([&mapping_key.to_vec()[..], &mapping_slot.to_vec()[..]].concat())
 }
-
