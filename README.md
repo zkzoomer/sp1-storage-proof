@@ -18,7 +18,7 @@ cp .env.example .env
 And set the values:
 
 - `ETH_RPC_URL`: The RPC URL of an _archive_ Ethereum node. You can use a public provider like [Infura](https://infura.io/) or run your own for to flex on the rest of us.
-- [Optional] `SP1_PRIVATE_KEY`: Your private key for [Succinct's prover network](https://docs.succinct.xyz/generating-proofs/prover-network.html). You may also choose to run the program in execution mode
+- [Optional] `SP1_PRIVATE_KEY`: Your private key for [Succinct's prover network](https://docs.succinct.xyz/generating-proofs/prover-network.html). You may also choose to run the program in execution mode.
 
 ## Running the Project
 
