@@ -3,7 +3,9 @@
 use alloy::consensus::Account;
 use alloy::primitives::{b256, keccak256, Bytes, U256};
 use alloy::rlp::{encode, Decodable};
-use alloy::rpc::types::EIP1186AccountProofResponse;
+/* use alloy::rpc::types::EIP1186AccountProofResponse; */ // Line removed as it's not used
+
+use super::StorageSlotProof;
 
 pub fn verify_proof(proof: &[Bytes], root: &[u8], path: &[u8], value: &[u8]) -> bool {
     let mut expected_hash = root.to_vec();
@@ -161,7 +163,8 @@ fn get_nibble(path: &[u8], offset: usize) -> u8 {
     }
 }
 
-pub fn encode_account(proof: &EIP1186AccountProofResponse) -> Vec<u8> {
+/* pub fn encode_account(proof: &EIP1186AccountProofResponse) -> Vec<u8> { */ // Adapted to StorageSlotProof
+pub fn encode_account(proof: &StorageSlotProof) -> Vec<u8> {
     let account = Account {
         nonce: proof.nonce,
         balance: proof.balance,
@@ -174,7 +177,7 @@ pub fn encode_account(proof: &EIP1186AccountProofResponse) -> Vec<u8> {
 
 #[cfg(test)]
 mod tests {
-    use crate::proof::shared_prefix_length;
+    use super::*;
 
     #[tokio::test]
     async fn test_shared_prefix_length() {
