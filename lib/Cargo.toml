@@ -1,0 +1,11 @@
+[package]
+version = "0.1.0"
+name = "storage-proof-lib"
+edition = "2021"
+
+[dependencies]
+alloy = { workspace = true }
+serde = { workspace = true }
+
+[dev-dependencies]
+tokio = { workspace = true }
