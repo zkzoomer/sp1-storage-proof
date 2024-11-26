@@ -1,26 +1,23 @@
 [package]
 version = "0.1.0"
-name = "fibonacci-script"
+name = "storage-proof-script"
 edition = "2021"
-default-run = "fibonacci"
+default-run = "storage-proof"
 
 [[bin]]
-name = "fibonacci"
+name = "storage-proof"
 path = "src/bin/main.rs"
 
-[[bin]]
-name = "evm"
-path = "src/bin/evm.rs"
-
 [dependencies]
-sp1-sdk = "3.0.0"
-serde_json = { version = "1.0", default-features = false, features = ["alloc"] }
-serde = { version = "1.0.200", default-features = false, features = ["derive"] }
+alloy = { workspace = true, features = ["rpc-types", "consensus", "network", "providers", "rlp", "transports"] }
 clap = { version = "4.0", features = ["derive", "env"] }
-tracing = "0.1.40"
+dotenv = { workspace = true }
 hex = "0.4.3"
-alloy-sol-types = { workspace = true }
-fibonacci-lib = { path = "../lib" }
+reqwest = "0.12.5"
+serde = { workspace = true }
+sp1-sdk = "3.0.0"
+storage-proof-lib = { path = "../lib" }
+tokio = { workspace = true }
 
 [build-dependencies]
 sp1-helper = "3.0.0"

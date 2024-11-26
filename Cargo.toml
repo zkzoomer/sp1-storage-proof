@@ -7,11 +7,10 @@ members = [
 resolver = "2"
 
 [workspace.dependencies]
-alloy = { version = "0.2.1", features = [
-    "rpc-types",
-    "consensus",
-    "rlp",
-    "k256",
-    "sol-types",
-]}
+alloy = { version = "0.2.1", features = ["consensus", "rlp", "rpc-types"] }
+dotenv = "0.15.0"
 serde = "1.0.203"
+tokio = "1.38.0"
+
+[patch.crates-io]
+tiny-keccak = { git = "https://github.com/sp1-patches/tiny-keccak", branch = "patch-v2.0.2" }
