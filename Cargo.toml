@@ -1,0 +1,17 @@
+[workspace]
+members = [
+    "lib",
+    "program",
+    "script",
+]
+resolver = "2"
+
+[workspace.dependencies]
+alloy = { version = "0.2.1", features = [
+    "rpc-types",
+    "consensus",
+    "rlp",
+    "k256",
+    "sol-types",
+]}
+serde = "1.0.203"
