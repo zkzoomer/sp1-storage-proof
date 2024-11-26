@@ -1,9 +1,10 @@
 [package]
 version = "0.1.0"
-name = "fibonacci-program"
+name = "storage-proof-program"
 edition = "2021"
 
 [dependencies]
-alloy-sol-types = { workspace = true }
-sp1-zkvm = "3.0.0-rc4"
-fibonacci-lib = { path = "../lib" }
+alloy = { workspace = true }
+serde = { workspace = true }
+sp1-zkvm = "3.0.0"
+storage-proof-lib = { path = "../lib" }
